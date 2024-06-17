@@ -1,1 +1,3 @@
-# TrabajoSem12
+# Trabajo Semana 12
+
+# Equipo B
