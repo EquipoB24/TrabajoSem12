@@ -20,8 +20,8 @@ app.add_app("Modelo LSTM", modelo_lstm2.app)
 app.add_app("Modelo SVC", modelo_svc.app)
 app.add_app("Modelo SVR", modelo_svr.app)
 app.add_app("Modelo LSTM R", modelo_lstmr.app)
-app.add_app("Modelo RFR", modelo_rfr.app)
-app.add_app("Modelo KNN R", modelo_knnr.app)
+#app.add_app("Modelo RFR", modelo_rfr.app)
+#app.add_app("Modelo KNN R", modelo_knnr.app)
 
 # The main app
 app.run()
