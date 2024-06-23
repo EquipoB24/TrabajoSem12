@@ -43,6 +43,7 @@ def app():
         st.pyplot(plt)
 
         # Visualización de la distribución del precio
+        plt.figure(figsize=(12, 6))
         sns.histplot(data['Adj Close'], kde=True)
         plt.title('Distribución del Precio Ajustado de Cierre')
         plt.xlabel('Precio Ajustado de Cierre')
