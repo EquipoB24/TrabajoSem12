@@ -36,6 +36,7 @@ def app():
         st.pyplot(plt)
 
         # Gráfico del precio ajustado de cierre
+        plt.figure(figsize=(12, 6))
         data['Adj Close'].plot(title='Precio ajustado de cierre de BHP')
         plt.xlabel('Fecha')
         plt.ylabel('Precio ajustado de cierre')
