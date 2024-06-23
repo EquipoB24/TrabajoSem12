@@ -130,9 +130,15 @@ def app():
         mse = mean_squared_error(y_test, y_pred)
         rmse = np.sqrt(mse)
         mae = mean_absolute_error(y_test, y_pred)
-        st.write(f'Mean Squared Error: {mse}')
-        st.write(f'Root Mean Squared Error: {rmse}')
-        st.write(f'Mean Absolute Error: {mae}')
+        st.write(f'Mean Squared Error: {mse:.2f}')
+        st.write(f'Root Mean Squared Error: {rmse:.2f}')
+        st.write(f'Mean Absolute Error: {mae:.2f}')
+
+        # Gráficos de barras para las métricas
+        metrics = pd.DataFrame({
+            'Metric': ['Mean Squared Error', 'Root Mean Squared Error', 'Mean Absolute Error'],
+            'Value': [mse, rmse, mae]
+        })
 
         # Mostrar predicción para el siguiente día
         next_day_prediction = model.predict(scaler.transform([[y.iloc[-1]]]))
