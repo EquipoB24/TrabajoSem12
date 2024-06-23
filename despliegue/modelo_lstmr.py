@@ -45,6 +45,7 @@ def app():
         st.pyplot(plt)
 
         # Gráfico del precio ajustado de cierre
+        plt.figure(figsize=(10, 6))
         df['Adj Close'].plot(title='Precio ajustado de cierre de BHP')
         plt.xlabel('Fecha')
         plt.ylabel('Precio ajustado de cierre')
@@ -52,6 +53,7 @@ def app():
         st.pyplot(plt)
 
         # Visualización de la distribución del precio
+        plt.figure(figsize=(10, 6))
         sns.histplot(df['Adj Close'], kde=True)
         plt.title('Distribución del Precio Ajustado de Cierre')
         plt.xlabel('Precio Ajustado de Cierre')
