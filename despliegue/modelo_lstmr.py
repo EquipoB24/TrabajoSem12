@@ -25,7 +25,7 @@ def create_sequences(data, seq_length):
 
 # Función principal de la aplicación
 def app():
-    st.title("Predicción del precio de acciones con LSTM")
+    st.title("Predicción del precio de acciones con LSTMR")
 
     ticker = st.text_input("Ingrese el símbolo de la acción (por ejemplo, 'BHP')", "BHP")
     start_date = st.date_input("Fecha de inicio", pd.to_datetime("2020-01-01"))
