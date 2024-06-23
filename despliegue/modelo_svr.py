@@ -43,12 +43,14 @@ def app():
         df['Adj Close'].plot(title='Precio ajustado de cierre de BHP')
         plt.xlabel('Fecha')
         plt.ylabel('Precio ajustado de cierre')
+        plt.legend()
         st.pyplot(plt)
 
         # Visualización de la distribución del precio
         sns.histplot(df['Adj Close'], kde=True)
         plt.title('Distribución del Precio Ajustado de Cierre')
         plt.xlabel('Precio Ajustado de Cierre')
+        plt.legend()
         st.pyplot(plt)
 
         # Gráfico de precio con medias móviles de 30 y 60 días
