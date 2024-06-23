@@ -134,12 +134,17 @@ def app():
         st.write(f'Root Mean Squared Error: {rmse:.2f}')
         st.write(f'Mean Absolute Error: {mae:.2f}')
 
-        # Gráficos de barras para las métricas
+        # Mostrar predicción para el siguiente día
+        next_day_prediction = model.predict(scaler.transform([[y.iloc[-1]]]))
+        st.write(f"El precio de BHP se pronóstica según el modelo SVR para el siguiente día como: ${next_day_prediction[0]:.2f} por acción.")
+
+         # Gráficos de barras para las métricas
         metrics = pd.DataFrame({
             'Metric': ['Mean Squared Error', 'Root Mean Squared Error', 'Mean Absolute Error'],
             'Value': [mse, rmse, mae]
         })
 
-        # Mostrar predicción para el siguiente día
-        next_day_prediction = model.predict(scaler.transform([[y.iloc[-1]]]))
-        st.write(f"El precio de BHP se pronóstica según el modelo SVR para el siguiente día como: ${next_day_prediction[0]:.2f} por acción.")
+        plt.figure(figsize=(10, 6))
+        sns.barplot(x='Metric', y='Value', data=metrics)
+        plt.title('Métricas de Evaluación del Modelo Random Forest')
+        st.pyplot(plt)
